@@ -1,0 +1,101 @@
+<h1>Empleados</h1>
+	<md-button  aria-label="More" ng-click="nuevo($event)">
+    Crear&nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+     </md-button>
+<md-list>
+  <md-subheader class="md-no-sticky">Empleados inscritos en la base de datos:</md-subheader>
+  <md-list-item ng-repeat="person in personas" ng-click="a()" class="md-3-line">
+  <div class="md-list-item-text" layout="column">
+            <h3>{{ person.nombre }}</h3>
+            <h4>Cedula: {{ person.cedula }}</h4>
+            <p>Correo : {{ person.correo }}</p>          
+      </div>
+    
+    <md-button class="md-icon-button" aria-label="More" ng-click="editar(person.id,person,$event)">
+    <i class="fa fa-pencil" aria-hidden="true"></i>
+     </md-button>
+    &nbsp;&nbsp;
+    <md-button class="md-icon-button" aria-label="More" ng-click="eliminar(person.id,$event)">
+    <i class="fa fa-trash" aria-hidden="true"></i>
+     </md-button>
+  </md-list-item>
+</md-list>
+
+
+<script type="text/ng-template" id="nuevo.tmpl.html">
+   <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Nuevo</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+         <i class="fa fa-close" aria-hidden="true"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+   
+<md-dialog-content>
+      <div class="md-dialog-content">
+      <form name="userForm">
+        <md-input-container class="md-block">
+          <label>Nombre</label>
+          <input ng-model="user.nombre">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Correo</label>
+          <input ng-model="user.correo">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Cedula</label>
+          <input ng-model="user.cedula">
+        </md-input-container>
+      </form>
+      </div>
+    </md-dialog-content>
+
+
+      <md-dialog-actions layout="row">
+      <md-button ng-click="guardar()">
+        Guardar
+      </md-button>
+    </md-dialog-actions>
+</script>
+
+<script type="text/ng-template" id="editar.tmpl.html">
+   <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Editar</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+         <i class="fa fa-close" aria-hidden="true"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+   
+<md-dialog-content>
+      <div class="md-dialog-content">
+      <form name="userForm">
+        <md-input-container class="md-block">
+          <label>Nombre</label>
+          <input ng-model="user.nombre">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Correo</label>
+          <input ng-model="user.correo">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Cedula</label>
+          <input ng-model="user.cedula">
+        </md-input-container>
+      </form>
+      </div>
+    </md-dialog-content>
+
+
+      <md-dialog-actions layout="row">
+      <md-button ng-click="guardar()">
+        Actualizar
+      </md-button>
+    </md-dialog-actions>
+</script>

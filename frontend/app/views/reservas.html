@@ -1,0 +1,164 @@
+<h1>Reservas</h1>
+
+<form >
+<div layout="row">
+	
+<md-input-container class="md-block">
+          <label>Empleado</label>
+          <md-select ng-model="user.nombre">
+              <md-option ng-repeat="item in empleados" value="{{item.id}}">
+                {{item.nombre}}
+              </md-option>
+            </md-select>
+
+          
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Servicio</label>
+          <md-select ng-model="user.servicio">
+              <md-option ng-repeat="item in servicios" value="{{item.id}}">
+                {{item.nombre}}
+              </md-option>
+            </md-select>
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Sucursal</label>
+          <md-select ng-model="user.sucursal">
+              <md-option ng-repeat="item in sucursales" value="{{item.id}}">
+                {{item.nombre}}
+              </md-option>
+            </md-select>
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Desde</label>
+          <input ng-model="user.desde" type="datetime-local" id="fechas_d">
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Hasta</label>
+          <input ng-model="user.hasta" type="datetime-local" id="fechas_h">
+        </md-input-container>	
+
+        <md-input-container class="md-block">
+          <md-button  aria-label="More" ng-click="nuevo($event)">
+    	Crear&nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+</md-button>
+        </md-input-container>
+
+
+</div>
+<span style="color: red"> {{msj_error}} </span>
+
+</form>
+
+<md-button
+          class="btn btn-primary"
+          mwl-date-modifier
+          date="viewDate"
+          decrement="calendarView"
+          ng-click="cellIsOpen = false">
+          Anterior
+        </md-button>
+        <md-button
+          class="btn btn-default"
+          mwl-date-modifier
+          date="viewDate"
+          set-to-today
+          ng-click="cellIsOpen = false">
+          Hoy
+        </md-button>
+        <md-button
+          class="btn btn-primary"
+          mwl-date-modifier
+          date="viewDate"
+          increment="calendarView"
+          ng-click="cellIsOpen = false">
+          Siguiente
+        </md-button>
+
+  <mwl-calendar
+    events="events"
+    view="calendarView"
+    view-title="calendarTitle"
+    view-date="viewDate"
+    on-event-click="eventClicked(calendarEvent)"
+    cell-is-open="cellIsOpen"
+    day-view-start="06:00"
+    day-view-end="22:59"
+    day-view-split="30"
+    cell-modifier="modifyCell(calendarCell)"
+    cell-auto-open-disabled="true">
+  </mwl-calendar>
+
+
+
+  <script type="text/ng-template" id="editar.tmpl.html">
+   <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Editar</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+         <i class="fa fa-close" aria-hidden="true"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+   
+<md-dialog-content>
+      <div class="md-dialog-content">
+      <form >
+<div layout="row">
+  
+<md-input-container class="md-block">
+          <label>Empleado</label>
+          <md-select ng-model="user.nombre">
+              <md-option ng-repeat="item in empleados" value="{{item.id}}">
+                {{item.nombre}}
+              </md-option>
+            </md-select>
+
+          
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Servicio</label>
+          <md-select ng-model="user.servicio">
+              <md-option ng-repeat="item in servicios" value="{{item.id}}">
+                {{item.nombre}}
+              </md-option>
+            </md-select>
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Sucursal</label>
+          <md-select ng-model="user.sucursal">
+              <md-option ng-repeat="item in sucursales" value="{{item.id}}">
+                {{item.nombre}}
+              </md-option>
+            </md-select>
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Desde</label>
+          <input ng-model="user.desde" type="datetime-local" id="fechas_d">
+        </md-input-container>
+<md-input-container class="md-block">
+          <label>Hasta</label>
+          <input ng-model="user.hasta" type="datetime-local" id="fechas_h">
+        </md-input-container> 
+
+
+
+</div>
+<span style="color: red"> {{msj_error}} </span>
+
+</form>
+      </div>
+    </md-dialog-content>
+
+
+      <md-dialog-actions layout="row">
+      <md-button ng-click="guardar()">
+        Actualizar
+      </md-button>
+      <md-button ng-click="eliminar()">
+        Eliminar
+      </md-button>
+    </md-dialog-actions>
+</script>
