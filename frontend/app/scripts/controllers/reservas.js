@@ -201,7 +201,7 @@ angular.module('citasApp')
     function listarEmpleados(){
 		return $http({
 			        method : "GET",
-			        url : "http://localhost/covinoc_prueba/backend/api/empleados.php",
+			        url : "http://104.131.252.191/covinoc_test/backend/api/empleados.php",
 			        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			    }).then(function mySucces(response) {
 			        return  response;
@@ -212,7 +212,7 @@ angular.module('citasApp')
 	function listarSucursales(){
 		return $http({
 			        method : "GET",
-			        url : "http://localhost/covinoc_prueba/backend/api/sucursales.php",
+			        url : "http://104.131.252.191/covinoc_test/backend/api/sucursales.php",
 			        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			    }).then(function mySucces(response) {
 			        return  response;
@@ -223,7 +223,7 @@ angular.module('citasApp')
 	function listarServicios(){
 		return $http({
 			        method : "GET",
-			        url : "http://localhost/covinoc_prueba/backend/api/servicios.php",
+			        url : "http://104.131.252.191/covinoc_test/backend/api/servicios.php",
 			        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			    }).then(function mySucces(response) {
 			        return  response;
@@ -234,7 +234,7 @@ angular.module('citasApp')
     function listarElementos(){
 		return $http({
 			        method : "GET",
-			        url : "http://localhost/covinoc_prueba/backend/api/reservas.php",
+			        url : "http://104.131.252.191/covinoc_test/backend/api/reservas.php",
 			        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			    }).then(function mySucces(response) {
 			        return  response;
@@ -246,7 +246,7 @@ angular.module('citasApp')
 	function crearElemento(datos) {
 		return $http({
 	        method : "POST",
-	        url : "http://localhost/covinoc_prueba/backend/api/reservas.php",
+	        url : "http://104.131.252.191/covinoc_test/backend/api/reservas.php",
 	        data:datos,
 			 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	    }).then(function mySucces(response) {
@@ -259,7 +259,7 @@ angular.module('citasApp')
 	function eliminarElemento(id){
 		return $http({
 	        method : "DELETE",
-	        url : "http://localhost/covinoc_prueba/backend/api/reservas.php?id="+id,
+	        url : "http://104.131.252.191/covinoc_test/backend/api/reservas.php?id="+id,
 	        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	    }).then(function mySucces(response) {
 	       return response;
@@ -271,7 +271,7 @@ angular.module('citasApp')
 	function actualizarElemento(id,datos) {
 		return $http({
 	        method : "PUT",
-	        url : "http://localhost/covinoc_prueba/backend/api/reservas.php?id="+id,
+	        url : "http://104.131.252.191/covinoc_test/backend/api/reservas.php?id="+id,
 	        data:datos,
 			 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	    }).then(function mySucces(response) {
