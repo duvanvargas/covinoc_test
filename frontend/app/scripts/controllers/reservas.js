@@ -25,7 +25,7 @@ angular.module('citasApp')
    		for (var i = 0; i < res.length; i++) {
    			console.log(res[i]);
    			$scope.events.push({
-		        title: res[i].nombre_e+"-"+res[i].nombre_s+"-"+res[i].nombre_l,
+		        title: res[i].nombre_e+"-"+res[i].nombre_s+"-"+res[i].nombre_,
 		        color: calendarConfig.colorTypes.warning,
 		        startsAt: moment(res[i].desde),
 		        endsAt: moment(res[i].hasta),
